@@ -29,6 +29,7 @@ camera = jetson.utils.gstCamera(1280, 720, "/dev/video0")
 display = jetson.utils.glDisplay()
 
 #모터제어 함수, 중앙에서 멀어질수록 더 빠른 각속도로 돌도록 함(바퀴속도 차이를 크게 함)
+#추후 적절한 수식으로 
 def motor(target):
     if target < 620:
         L.ChangeDutyCycle(50)
